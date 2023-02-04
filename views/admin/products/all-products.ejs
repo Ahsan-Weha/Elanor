@@ -1,0 +1,32 @@
+<%- include('../../shared/includes/head.ejs', {pageTitle: 'Admin Product Page' } )%>
+    <link rel="stylesheet" href="/styles/product.css">
+
+
+
+    </head>
+
+    <body>
+        <%- include('../../shared/includes/header.ejs') %>
+           
+                <main>
+                    <h2>Product Administration</h2>
+                    <section>
+                        <h3>Product Management</h3>
+                    </section>
+                    <section>
+                        <ul>
+                            <% for(const product of products) {%>
+                                <li>
+                                    <%- include('../../shared/includes/product-item', {product: product}) %>
+                                </li>
+                                <% } %>
+                        </ul>
+                    </section>
+
+                </main>
+
+
+
+
+
+                <%- include('../../shared/includes/footer.ejs') %>

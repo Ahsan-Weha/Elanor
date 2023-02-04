@@ -1,0 +1,19 @@
+<%- include('../../shared/includes/head.ejs', {pageTitle: 'Shop Now' }) %>
+<link rel="stylesheet" href="/styles/product.css">
+
+    </head>
+
+    <body>
+        <%- include('../../shared/includes/header.ejs') %>
+
+            <main>
+                <ul>
+                    <% for(const product of products) {%>
+                        <li>
+                            <%- include('../../shared/includes/product-item', {product: product}) %>
+                        </li>
+                        <% } %>
+                </ul>
+            </main>
+
+            <%- include('../../shared/includes/footer.ejs') %>

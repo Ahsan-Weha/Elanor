@@ -1,0 +1,53 @@
+<header>
+    <p id="delivery">Delivery all over Pakistan in Rupees 250</p>
+    <div id="header">
+        <p id="elanor">
+            <a href="">Elanor</a>
+        </p>
+        <button id="mobile-menu-btn"> <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div id="svgs">
+            <form action="" id="searchform">
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input type="text" value="Search Product">
+            </form>
+            <button id="searchbtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <a href="/cart/items"><i class="fa-solid fa-cart-shopping"></i>
+                <!-- <span id="badge"><%= locals.cart.totalQuantity %></span> -->
+            </a>
+            <button id="accountbtn"><i class="fa-solid fa-user"></i></button>
+        </div>
+    </div>
+    <nav class="nav-items">
+        <%- include('nav-bar') %>
+    </nav>
+    <aside id="mobile-menu">
+        <ul class="sides">
+            <li>
+                <a href="/home">H O M E</a>
+            </li>
+            <hr>
+            <li>
+                <a href="/shop">S H O P </a>
+            </li>
+            <hr>
+            <li>
+                <a href="/about-us">A B O U T &ensp;U S</a>
+            </li>
+            <hr>
+            <li>
+                <a href="/contact-us">C O N T A C T &ensp;U S</a>
+            </li>
+            <hr>
+            <li>
+                <a href="/faqs">F A Q S</a>
+            </li>
+            <hr>
+        </ul>
+    </aside>
+    <aside id="account">
+        <%- include('account-bar') %>
+    </aside>
+</header>

@@ -1,0 +1,52 @@
+<%- include('../../shared/includes/head.ejs', {pageTitle: product.title }) %>
+    <link rel="stylesheet" href="/styles/product.dtl.css">
+    <script src="/scripts/calculating-price.js" defer></script>
+    <script src="/scripts/cart-management.js" defer></script>
+
+    </head>
+
+    <body>
+        <%- include('../../shared/includes/header.ejs') %>
+
+            <main id="product-details">
+                <header>
+                    <a href="/shop" class="it"><i class="fa-solid fa-arrow-left"></i>ALL PRODUCTS</a>
+
+                    <div class="wht">
+                        <div>
+                            <img src="<%= product.imageUrl %>" alt="Oil">
+                        </div>
+                        <div class="r">
+
+                            <div class="prg">
+                                <p>
+                                    <%= product.title %>
+                                </p>
+                                <span> PKR. </span>
+                                <p id="price" class="inline">
+                                    <%= product.price %>
+                                </p>
+                            </div>
+                            <div id="quan">
+                                <label for="quantity">Quantity</label>
+                                <input type="number" name="quantity" id="quantity" required min="0" value="1">
+                            </div>
+                            <div id="sbt"><span>Subtotal: PKR</span>
+                                <p id="sub-total" class="inline">1000</p>
+                            </div>
+                            <div class="add-to-cart">
+
+                                <button data-productid="<%= product.id %> ">ADD TO CART</button>
+                                <a href="">BUY IT NOW</a>
+                            </div>
+                            <div class="prag">
+                                <h3>Ingredients</h3>
+                                <p>
+                                    <%= product.description %>%>
+                                </p>
+                            </div>
+                        </div>
+                </header>
+            </main>
+
+            <%- include('../../shared/includes/footer.ejs') %>

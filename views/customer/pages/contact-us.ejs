@@ -1,0 +1,37 @@
+<%- include('../../shared/includes/head.ejs', {pageTitle: 'Contact Us' } )%>
+    <link rel="stylesheet" href="/styles/shared.css">
+
+
+    </head>
+
+    <body>
+        <%- include('../../shared/includes/header.ejs') %>
+            <main>
+                <h2>Contact Us</h2>
+                <div id="forall-bg" class="set">
+                    <div id="contact-us">
+                        <h3>Drop Us A Message!</h3>
+                        <form action="/contact-us" id="form" method="post">
+                            <input type="text" name="name" id="username" placeholder="Name" required maxlength="20">
+                            <input type="email" name="email" id="email" placeholder="Email" required
+                                autocapitalize="off" autocomplete="off">
+                            <input type="text" name="message" id="message" placeholder="Message" required>
+                            <button type="submit" id="btn">SEND</button>
+                        </form>
+                    </div>
+                    <div>
+                        <h3>Get In Touch!</h3>
+                        <p>We love to hear from our customers.Feel free to contact us.You can use this form to send your
+                            enquiry or ideas
+                        </p>
+                        <p>Team Elanor</p>
+                        <p>Email: <a href="mailto:elanor.pk@gmail.com" class="com">elanor.pk@gmail.com</a></p>
+                    </div>
+                </div>
+            </main>
+
+
+
+
+
+            <%- include('../../shared/includes/footer.ejs') %>

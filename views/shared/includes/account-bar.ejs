@@ -1,0 +1,34 @@
+<ul class="sides">
+    <% if(locals.isAdmin){ %>
+        <li>
+            <a href="/admin/">A D M I N </a>
+        </li>
+        <hr>
+        <li>
+            <a href="/admin/products">A L L&ensp; P R O D U C T S</a>
+        </li>
+        <hr>
+        <li>
+            <a href="/admin/products/new">A D D&ensp; P R O D U C T </a>
+        </li>
+        <hr>
+        <% } %>
+            <% if(!locals.isAuth){ %>
+                <li>
+                    <a href="/login">L O G I N </a>
+                </li>
+                <hr>
+                <li>
+                    <a href="/signup">S I G N&ensp;U P </a>
+                </li>
+                <hr>
+                <% } %>
+                    <% if(locals.isAuth){ %>
+                        <li>
+                            <form action="/logout" method="post"><button>L O G&ensp;O U T</button>
+                            </form>
+                        </li>
+                        <hr>
+                        <% } %>
+
+</ul>

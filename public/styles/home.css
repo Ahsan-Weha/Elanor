@@ -1,0 +1,170 @@
+#one {
+    height: 31.25rem;
+    background-position: center;
+    background-size: cover;
+    background-image: url(/images/IMG_9527.JPG);
+}
+
+#two {
+    margin-top: 5rem;
+    font-family: var(--font-family-2);
+}
+
+#btt p {
+    position: absolute;
+    margin-top: 23.75rem;
+    text-align: center;
+    width: 100%;
+}
+
+#blabla {
+    display: flex;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+#blabla img {
+    width: 100%;
+
+
+}
+
+
+#three {
+    margin-top: 5rem;
+}
+
+#edit {
+    padding: 1.875rem;
+    background-color: aliceblue;
+    font-weight: lighter;
+}
+
+
+#btt p a {
+    color: white;
+    font-family: 'Aboreto', cursive;
+    font-size: 2.375rem;
+    font-weight: 700;
+    border: 0.0625rem solid;
+    padding: 0.5rem 0.75rem;
+}
+
+#btt p a:hover {
+    background-color: white;
+    color: rgb(88, 88, 88);
+}
+
+
+
+@media (max-width: 45rem) {
+    #v {
+        flex-direction: column;
+    }
+
+    .shd {
+        box-shadow: none;
+        text-align: center;
+        margin-bottom: 1.875rem;
+        width: 17rem;
+
+    }
+
+    #one {
+        height: 21.875rem;
+    }
+
+    #btt p {
+        margin-top: 17.5rem;
+    }
+
+
+
+}
+
+
+
+@media (max-width: 33.75rem) {
+
+    #btt p {
+        margin-top: 10rem;
+    }
+
+    #btt p a {
+        font-size: 1.25rem;
+    }
+
+    #one {
+        height: 14.375rem;
+    }
+}
+
+
+@media (max-width: 31.5625rem) {
+    #btt p {
+        margin-top: 8.125rem;
+    }
+
+    #one {
+        height: 11.25rem;
+    }
+
+    #btt p a {
+        font-size: 1rem;
+    }
+
+}
+
+
+@media (max-width: 25.625rem) {
+
+    #one {
+        height: 9.375rem;
+    }
+
+    #btt p a {
+        font-size: 0.75rem;
+    }
+
+    #btt p {
+        margin-top: 6.25rem;
+    }
+
+}
+
+
+
+
+@media (max-width: 22.5rem) {
+
+    #one {
+        height: 8.125rem;
+    }
+
+    #btt p {
+        margin-top: 5.3125rem;
+    }
+
+    #btt p a {
+        font-size: 0.625rem;
+    }
+
+
+}
+
+@media (max-width: 55rem) {
+    #blabla {
+        flex-direction: column;
+        margin: auto;
+    }
+
+    #blabla img {
+        width: 280px;
+        align-self: center;
+    }
+
+    #j {
+        display: contents;
+    }
+
+}

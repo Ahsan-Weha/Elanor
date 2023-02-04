@@ -1,0 +1,15 @@
+<article class="for-add">
+    <div class="shd">
+        <a href="/products/<%= product.id %>">
+            <img src="<%= product.imageUrl %>" alt="<%= product.title %> " id="oil-img">
+            <div class="dtl">
+                <p>
+                    <%= product.title %>
+                </p>
+                <p>PKR.<%= product.price %>
+                </p>
+            </div>
+        </a>
+    </div>
+    <div class="add-to-cart"> <a href="/products/<%= product.id %> ">VIEW DETAILS</a></div>
+</article>

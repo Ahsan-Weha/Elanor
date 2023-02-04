@@ -1,0 +1,64 @@
+<%- include('../../shared/includes/head.ejs', {pageTitle: 'Home' }) %>
+    <link rel="stylesheet" href="/styles/product.css">
+    <link rel="stylesheet" href="/styles/home.css">
+
+
+    </head>
+
+    <body>
+        <%- include('../../shared/includes/header.ejs') %>
+
+            <main>
+                <section id="one">
+                    <li id="btt">
+                        <p>
+                            <a href="/shop">Shop Now</a>
+                        </p>
+                    </li>
+                </section>
+                <section id="two">
+                    <h2>Featured Products</h2>
+                    <% for(const product of products) {%>
+                        <li>
+                            <%- include('../../shared/includes/product-item', {product: product}) %>
+                        </li>
+                        <% } %>
+                </section>
+                <section id="three">
+                    <div id="blabla">
+                        <div id="j"><img src="images/IMG_9521.JPG" alt="blog-img"></div>
+                        <div id="edit">
+                            <p>
+                                Whether it comes to skin care or hair care, oil has become a necessary product, because
+                                of its
+                                moisturizing, softening, and protective properties. Most of the harsh chemicals used in
+                                hair
+                                products severely damage your hair inducing hair loss and irreversible hair damage.
+                                Elanor hair
+                                oil provides you with 100% natural ingredients which help you combat dryness, split
+                                ends,
+                                frizziness, hair fall, dandruff, and many other hair problems. It enhances hair growth,
+                                hydrate
+                                and strengthen the hair shaft, and increases the elasticity of your hair which makes it
+                                less
+                                prone to breakage.
+                            </p>
+                            <p>
+                                Elanor hair oil is enriched with vitamins, minerals, fatty acids, and fibers which
+                                create a
+                                barrier that prevents your strands from losing moisture, which is crucial for your hair.
+                                Moreover, it has antimicrobial and antifungal properties which seal your hair, gives you
+                                a good
+                                sense of luster, quickly recover natural softness and leave you with well nourished,
+                                smooth,
+                                shiny, healthy, and long hair in no time.
+
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+
+            </main>
+
+            <%- include('../../shared/includes/footer.ejs') %>
