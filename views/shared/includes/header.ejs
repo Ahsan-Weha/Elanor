@@ -14,9 +14,12 @@
                 <input type="text" value="Search Product">
             </form>
             <button id="searchbtn"><i class="fa-solid fa-magnifying-glass"></i></button>
-            <a href="/cart/items"><i class="fa-solid fa-cart-shopping"></i>
-                <!-- <span id="badge"><%= locals.cart.totalQuantity %></span> -->
-            </a>
+            <button><a href="/cart"><i class="fa-solid fa-bag-shopping"></i>
+                    <span id="badge">
+                        <%= locals.cart.totalQuantity %>
+                    </span>
+                </a>
+            </button>
             <button id="accountbtn"><i class="fa-solid fa-user"></i></button>
         </div>
     </div>

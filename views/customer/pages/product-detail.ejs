@@ -1,4 +1,4 @@
-<%- include('../../shared/includes/head.ejs', {pageTitle: product.title }) %>
+<%- include('../../shared/includes/head.ejs', {pageTitle: product.title +' - Elanor' }) %>
     <link rel="stylesheet" href="/styles/product.dtl.css">
     <script src="/scripts/calculating-price.js" defer></script>
     <script src="/scripts/cart-management.js" defer></script>
@@ -10,7 +10,9 @@
 
             <main id="product-details">
                 <header>
-                    <a href="/shop" class="it"><i class="fa-solid fa-arrow-left"></i>ALL PRODUCTS</a>
+                    <a href="/shop" class="it"><i class="fa-solid fa-arrow-left"></i>
+                        <p id="upp">ALL PRODUCTS</p>
+                    </a>
 
                     <div class="wht">
                         <div>
@@ -22,27 +24,30 @@
                                 <p>
                                     <%= product.title %>
                                 </p>
+                                <p id="summ">
+                                    <%= product.summary %>
+                                </p>
                                 <span> PKR. </span>
                                 <p id="price" class="inline">
                                     <%= product.price %>
                                 </p>
                             </div>
-                            <div id="quan">
-                                <label for="quantity">Quantity</label>
-                                <input type="number" name="quantity" id="quantity" required min="0" value="1">
-                            </div>
-                            <div id="sbt"><span>Subtotal: PKR</span>
-                                <p id="sub-total" class="inline">1000</p>
-                            </div>
                             <div class="add-to-cart">
-
-                                <button data-productid="<%= product.id %> ">ADD TO CART</button>
-                                <a href="">BUY IT NOW</a>
+                                <button id="cartbtn" data-productid="<%= product.id %>">ADD TO CART</button>
+                                <a href="/cart" id="cartbtn" class="abcd">BUY IT NOW</a>
                             </div>
                             <div class="prag">
                                 <h3>Ingredients</h3>
                                 <p>
                                     <%= product.description %>%>
+                                </p>
+                                <h3>How To Apply</h3>
+                                <p>Apply using a full dropper and massage the herbal oil, rich in nutrients, into the
+                                    scalp and hair
+                                    length. Leave in for 30 minutes or use as an overnight treatment and wash 2-3 times
+                                    with
+                                    shampoo, condition and style as usual. Repeat 1-2 times a week for maximum results.
+
                                 </p>
                             </div>
                         </div>

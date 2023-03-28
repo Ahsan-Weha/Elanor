@@ -1,15 +1,17 @@
 const db = require('../data/database');
 const bcrypt = require('bcryptjs');
+const mongodb = require('mongodb');
 
 class User {
-    constructor(name, email, password, address, city, postal) {
+    constructor(name, email, password, address, city, postal, number) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.location = {
             address: address,
             city: city,
-            postalcode: postal
+            postalcode: postal,
+            number: number
         };
     }
     getUserWithSameEmail() {
@@ -38,6 +40,38 @@ class User {
     };
 
 
+    static async findById(userId) {
+        const uid = new mongodb.ObjectId(userId);
+        return db.getDb().collection('users').findOne({ _id: uid });
+    }
+
+    async updateAddress(userId) {
+
+        const userid = new mongodb.ObjectId(userId);
+
+
+        await db.getDb().collection('users').updateOne(
+            { _id: userid },
+            {
+                $set: {
+                    name: this.name,
+                    email: this.email,
+                    location: this.location,
+                }
+            }
+        );
+    }
+
+    async addAddress() {
+        const userData = {
+            name: this.name,
+            email: this.email,
+            location: this.location,
+        }
+        await db.getDb().collection('orderData').insertOne(userData);
+    }
 }
+
+
 
 module.exports = User; 

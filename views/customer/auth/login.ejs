@@ -1,4 +1,4 @@
-<%- include('../../shared/includes/head.ejs', {pageTitle: 'Login' })%>
+<%- include('../../shared/includes/head.ejs', {pageTitle: 'Login - Elanor' })%>
     <link rel="stylesheet" href="styles/form.css">
 
     </head>
@@ -9,27 +9,26 @@
                 <h2>Login </h2>
                 <% if(inputData.errorMessage){ %>
                     <section class="alert">
-                        <h2>Invalid Data</h2>
+                        <h2>Invalid</h2>
                         <p>
                             <%= inputData.errorMessage %>
                         </p>
                     </section>
                     <% } %>
-                        <form action="/login" method="post">
-                            <p>
-                                <label for="email">Email</label>
-                                <input type="email" name="email" id="email" value="<%=inputData.email%>" required>
-                            </p>
-                            <p>
-                                <label for="password">Password</label>
-                                <input type="password" id="password" name="password" minlength="6"
-                                    value="<%= inputData.password %>" required>
-                            </p>
-                            <button id="btn-alt">Login</button>
-                            <p><a href="/signup">Signup Instead </a></p>
-                        </form>
-
-
+                        <div>
+                            <form action="/login" method="post">
+                                <p>
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" id="email" value="<%=inputData.email%>" required>
+                                </p>
+                                <p>
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" name="password" minlength="6"
+                                        value="<%= inputData.password %>" required>
+                                </p>
+                                <button id="btn-alt">Login</button>
+                                <p><a href="/signup">Signup Instead </a></p>
+                         
             </main>
 
 

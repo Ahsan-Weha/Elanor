@@ -1,8 +1,8 @@
-#one {
-    height: 31.25rem;
+#one img {
+    max-width: 100%;
+    max-height: 400px;
     background-position: center;
     background-size: cover;
-    background-image: url(/images/IMG_9527.JPG);
 }
 
 #two {
@@ -34,11 +34,12 @@
     margin-top: 5rem;
 }
 
+/* 
 #edit {
     padding: 1.875rem;
     background-color: aliceblue;
     font-weight: lighter;
-}
+} */
 
 
 #btt p a {
@@ -55,6 +56,12 @@
     color: rgb(88, 88, 88);
 }
 
+#three img {
+    width: 100%;
+    padding-left: 13%;
+    padding-right: 13%;
+    max-width: 100%;
+}
 
 
 @media (max-width: 45rem) {

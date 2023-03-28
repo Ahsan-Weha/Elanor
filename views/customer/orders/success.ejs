@@ -1,0 +1,16 @@
+<%- include('../../shared/includes/head', {pageTitle: 'Success! - Elanor' }) %>
+
+    </head>
+
+    <body>
+        <%- include('../../shared/includes/header') %>
+
+            <main id="suc">
+                <h2>Congratulations!</h2>
+                <h3>Your order has been placed.</h3>
+                <% if(locals.isAuth){ %>
+                    <p>You can Visit <a href="/orders">the orders page</a> for more details.</p>
+                    <% } %>
+            </main>
+
+            <%- include('../../shared/includes/footer') %>

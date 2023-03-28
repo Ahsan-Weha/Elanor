@@ -1,0 +1,40 @@
+<form action="/confirm-address" method="post">
+    <p>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" <%if (userDocument) { %>
+        value="<%= userDocument.name %>"
+            <% } %> required>
+    </p>
+    <p>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" <%if (userDocument) { %>
+        value="<%= userDocument.email %>"
+            <% } %> required>
+    </p>
+    <p>
+        <label for=" address">Address</label>
+        <input type="text" id="address" name="address"  <%if (userDocument) { %>
+        value="<%= userDocument.location.address %>"
+            <% } %> required>
+    </p>
+    <p>
+        <label for="city">City</label>
+        <input type="text" id="city" name="city"  <%if (userDocument) { %>
+        value="<%= userDocument.location.city %>"
+            <% } %> required>
+    </p>
+    <p>
+        <label for="postal">Postal Code</label>
+        <input type="text" id="postal" name="postal" minlength="5" maxlength="7" <%if (userDocument) { %>
+        value="<%= userDocument.location.postalcode %>"
+            <% } %> required>
+    </p>
+    <p>
+        <label for="number">Number</label>
+        <input type="tel" id="number" name="number" maxlength="11" <%if (userDocument) { %>
+        value="<%= userDocument.location.number %>"
+            <% } %> required>
+    </p>
+    <hr>
+    <button type="submit" id="btn-alt">PROCEED TO SHIPPING</button>
+</form>

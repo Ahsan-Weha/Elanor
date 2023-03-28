@@ -14,7 +14,8 @@ function getSignup(req, res) {
             name: '',
             address: '',
             city: '',
-            postal: ''
+            postal: '',
+            number: ''
         };
     }
     res.render('customer/auth/signup', { inputData: sessionData });
@@ -26,10 +27,11 @@ async function postSignup(req, res, next) {
         email: req.body.email,
         password: req.body.password,
         confirmPassword: req.body.confirmPassword,
-        name: req.body.name,
+        name: req.body.name, 
         address: req.body.address,
         city: req.body.city,
-        postal: req.body.postal
+        postal: req.body.postal,
+        number: req.body.number
     }
 
 
@@ -40,13 +42,14 @@ async function postSignup(req, res, next) {
         req.body.name,
         req.body.address,
         req.body.city,
-        req.body.postal
+        req.body.postal,
+        req.body.number
     ) || !validation.PasswordIsConfirmed(req.body.password, req.body.confirmPassword)
     ) {
         sessionFlash.flashDataToSession(req,
             {
                 errorMessage:
-                    'Please Check Your Input, Password must be 6 character long, postal must be 5 character long',
+                    'Please Check Your Input, Password must be at least 6 characters',
                 ...enteredData
             },
             function () {
@@ -62,14 +65,15 @@ async function postSignup(req, res, next) {
         req.body.password,
         req.body.address,
         req.body.city,
-        req.body.postal
+        req.body.postal,
+        req.body.number
     );
     try {
         const existsAlready = await user.existsAlready();
         if (existsAlready) {
             sessionFlash.flashDataToSession(req,
                 {
-                    errorMessage: 'User Already Exsists...Try Logging in Instead!',
+                    errorMessage: 'This email is already associated with another account.',
                     ...enteredData
                 }, function () {
 

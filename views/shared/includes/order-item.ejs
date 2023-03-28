@@ -1,0 +1,68 @@
+<article >
+
+
+    <section>
+        <ul>
+            <% for (const item of order.productData.items) { %>
+                <li id="flx">
+                    <img src="<%= item.product.imageUrl %>" alt="<%= item.product.title %>">
+                    <div id="gap">
+                        <h3>
+                            <%= item.product.title %>
+                        </h3>
+                        <p>By <%= order.userData.name %>
+                        </p>
+                        <div id="row">
+                            <p>Qty <%= item.quantity %>
+                            </p>
+                            <p id="mg">Sub Total <span id="prc">
+                                    <%= order.productData.totalPrice%>PKR
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <% if (locals.isAdmin) { %>
+                        <address>
+                            <p><a href="mailto:<%= order.userData.email %>">
+                                    <%= order.userData.name %>
+                                </a>
+                            </p>
+                            <p>
+                                <%= order.userData.location.address %> (<%= order.userData.location.postalcode %>
+                                        <%= order.userData.location.city %>)
+                            </p>
+                            <p>
+                                <%= order.userData.location.number %>
+                            </p>
+                        </address>
+                        <% } %>
+                        <div id="adj">
+                            <h3>
+                                <%= order.formattedDate %>
+                            </h3>
+                            <p>Status <span class="badge">
+                                    <%= order.status.toUpperCase() %>
+                                </span> </p>
+                        </div>
+                </li>
+
+
+                <% } %>
+        </ul>
+    </section>
+
+    <% if (locals.isAdmin) { %>
+        <section class="order-actions">
+            <form>
+
+                <input type="hidden" name="orderid" value="<%= order.id %>">
+                <select name="status">
+                    <option value="pending" <% if (order.status==='pending' ) { %>selected<% } %>>Pending</option>
+                    <option value="fulfilled" <% if (order.status==='fulfilled' ) { %>selected<% } %>>Fulfilled</option>
+                    <option value="cancelled" <% if (order.status==='cancelled' ) { %>selected<% } %>>Cancelled</option>
+                </select>
+                <button class="btn btn-alt">Update</button>
+            </form>
+        </section>
+        <% } %>
+</article>

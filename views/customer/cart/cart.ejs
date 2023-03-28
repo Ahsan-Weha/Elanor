@@ -1,0 +1,38 @@
+<%- include('../../shared/includes/head', { pageTitle: 'Your Cart - Elanor' }) %>
+    <link rel="stylesheet" href="/styles/cart.css">
+    <script src="/scripts/cart-item-management.js" defer></script>
+    </head>
+
+    <body>
+        <%- include('../../shared/includes/header') %>
+            <main>
+                <h2>Your Cart</h2>
+                <ul id="cart-items">
+                    <% for (const cartItem of locals.cart.items) { %>
+                        <li>
+                            <%- include('includes/cart-items', { item: cartItem }) %>
+                        </li>
+                        <form class="cart-item-management" data-productid="<%= cartItem.product.id %>">
+                            <input type="number" value="<%= cartItem.quantity %>" required min="0">
+                            <button id="btn btn-alt">Update</button>
+                        </form>
+                        <hr>
+                        <% } %>
+                </ul>
+                <div id="cart-total">
+                    <p>Subtotal
+                        <span id="cart-total-price">
+                            <%= locals.cart.totalPrice %>
+                        </span>RS
+                    </p>
+                    <% if( locals.cart.totalQuantity> 0 ) { %>
+                        <!-- <form action="/confirm-address" method="post">
+                            <button id="btn">Buy Products</button>
+                        </form> -->
+                        <a href="/confirm-address" id="btn">Check Out</a>
+                        <% } else { %>
+                            <p id="cart-total-fallback"> Add items to proceed and purchase.</p>
+                            <% } %>
+                </div>
+            </main>
+            <%- include('../../shared/includes/footer') %>

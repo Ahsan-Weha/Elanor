@@ -2,16 +2,10 @@ const db = require('../data/database');
 
 
 class Contact {
-    constructor(name, email, message, password, address, city, postal) {
+    constructor(name, email, message) {
         this.name = name;
         this.email = email;
         this.message = message;
-        this.password = password;
-        this.location = {
-            address: address,
-            city: city,
-            postalcode: postal
-        };
     }
 
     async postContactUs() {

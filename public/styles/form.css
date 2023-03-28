@@ -1,4 +1,4 @@
-form {
+main form {
     max-width: 30rem;
     margin: 2rem auto;
     padding: 1rem;
@@ -58,5 +58,9 @@ textarea {
     height: 4rem;
     border-radius: var(--border-radius-small);
     object-fit: cover;
+    display: none;
+}
+
+#hdn {
     display: none;
 }

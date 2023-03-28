@@ -1,8 +1,9 @@
 <ul class="sides">
     <% if(locals.isAdmin){ %>
         <li>
-            <a href="/admin/">A D M I N </a>
+            <a href="/admin/orders">A D M I N &ensp;O R D E R </a>
         </li>
+
         <hr>
         <li>
             <a href="/admin/products">A L L&ensp; P R O D U C T S</a>
@@ -23,12 +24,17 @@
                 </li>
                 <hr>
                 <% } %>
-                    <% if(locals.isAuth){ %>
+                    <% if(locals.isAuth && !locals.isAdmin){ %>
                         <li>
-                            <form action="/logout" method="post"><button>L O G&ensp;O U T</button>
-                            </form>
+                            <a href="/orders">A L L&ensp;O R D E R S </a>
                         </li>
                         <hr>
                         <% } %>
+                            <% if(locals.isAuth){ %>
+                                <li>
+                                    <form action="/logout" method="post"><button>L O G&ensp;O U T</button>
+                                    </form>
+                                </li>
+                                <% } %>
 
 </ul>

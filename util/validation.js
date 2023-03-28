@@ -6,13 +6,14 @@ function userCredentialsAreValid(email, password, confirmPassword) {
     return email && email.includes('@') && password && password.trim().length > 5 && confirmPassword && confirmPassword.trim().length > 5
 }
 
-function userDetailsAreValid(email, password, confirmPassword, name, address, city, postal,) {
+function userDetailsAreValid(email, password, confirmPassword, name, address, city, postal, number) {
     return (
         userCredentialsAreValid(email, password, confirmPassword) &&
         !isEmpty(name) &&
         !isEmpty(address) &&
         !isEmpty(city) &&
-        !isEmpty(postal)
+        !isEmpty(postal) &&
+        !isEmpty(number)
     );
 }
 function PasswordIsConfirmed(passowrd, confirmPassword) {

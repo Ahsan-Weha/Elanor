@@ -27,14 +27,15 @@ input:focus {
 }
 
 .set {
+    margin-top: 25px;
     display: flex;
 }
 
 #contact-us {
     display: flex;
     flex-direction: column;
-    min-width: 20rem;
-    margin-left: 2rem;
+    min-width: 30rem;
+    margin-left: 5rem;
 }
 
 #conatct-us form {
@@ -49,7 +50,7 @@ input:focus {
 .svvg {
     width: 1.125rem;
     height: 1.125rem;
-    color:var(--color-gray-700);
+    color: var(--color-gray-700);
 }
 
 
@@ -59,7 +60,7 @@ input:focus {
 
 .question button {
     width: 100%;
-    background-color:var(--color-primary-100);
+    background-color: var(--color-primary-100);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -70,6 +71,10 @@ input:focus {
     color: var(--color-gray-500);
     cursor: pointer;
     font-family: var(--font-family-2);
+}
+
+#mg {
+    margin-top: 16px;
 }
 
 .question p {
@@ -102,4 +107,27 @@ input:focus {
 
 .svvg.rotate {
     transform: rotate(180deg);
+}
+
+
+@media (max-width:53.125rem) {
+
+    .set {
+        flex-direction: column;
+    }
+
+    #git {
+        margin-top: 40px;
+        width: 90%;
+        margin-left: 12px;
+
+    }
+
+    input {
+        width: 90%;
+    }
+
+    #contact-us {
+        margin-left: 12px;
+    }
 }

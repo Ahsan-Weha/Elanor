@@ -4,6 +4,7 @@ const express = require('express');
 const errorHandlerMiddleware = require('./middlewares/error-handler');
 const checkAuthStatusMiddleware = require('./middlewares/check-auth');
 const protectRoutesMiddleware = require('./middlewares/protect-routes');
+const notFoundMiddleware = require('./middlewares/not-found');
 const cartMiddleware = require('./middlewares/cart');
 
 
@@ -12,6 +13,7 @@ const authRoutes = require('./routes/auth-routes');
 const adminRoutes = require('./routes/admin-routes');
 const productRoutes = require('./routes/product-route');
 const cartRoutes = require('./routes/cart-routes');
+const orderRoutes = require('./routes/order-routes');
 
 
 
@@ -43,10 +45,11 @@ app.use(checkAuthStatusMiddleware);
 app.use(authRoutes);
 app.use(baseRoutes);
 app.use(productRoutes);
-app.use('/cart', cartRoutes);
-app.use(protectRoutesMiddleware);
-app.use('/admin', adminRoutes);
+app.use('/cart', cartRoutes); 
+app.use( orderRoutes);
+app.use('/admin', protectRoutesMiddleware, adminRoutes);
 
+app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
 db.connectToDatabase()

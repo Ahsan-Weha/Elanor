@@ -1,0 +1,83 @@
+img {
+    width: 150px;
+    object-fit: contain;
+    margin-bottom: 28px;
+}
+
+#flx {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+    justify-content: space-evenly;
+}
+
+ol {
+    padding: 0px;
+}
+
+ul {
+    padding: 0px;
+}
+
+
+#row {
+    display: flex;
+    flex-direction: row;
+}
+
+#mg {
+    margin-left: 20px;
+}
+
+
+
+#prc {
+    font-weight: 700;
+}
+
+.badge {
+    color: black;
+}
+
+
+
+#adj h3 {
+    font-size: 18px;
+}
+
+#adj {
+    margin-top: 12px;
+
+}
+
+#adj p {
+    margin-left: 20px;
+}
+
+
+
+form {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:38.5rem) {
+    #flx {
+        flex-direction: column;
+        margin-left: 20px;
+    }
+
+    address {
+        margin-top: 20px;
+    }
+}

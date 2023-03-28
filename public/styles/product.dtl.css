@@ -12,8 +12,8 @@
     color: var(--color-gray-700);
     font-size: 0.8125rem;
     padding: 0.9375rem 4.0625rem;
-    font-weight: 700;
-    font-family: var(--font-family-2);
+    font-weight: 500;
+
 }
 
 .add-to-cart a:hover,
@@ -24,6 +24,8 @@
 
 img {
     width: 23rem;
+    object-fit: contain;
+    margin-left: 20px;
 }
 
 .prg p {
@@ -57,10 +59,12 @@ img {
     font-size: 0.9375rem;
     color: var(--color-gray-400);
     font-family: var(--font-family-2);
+    margin-left: 15px;
 }
 
-#sbt {
-    margin: 25px 0;
+#upp {
+    margin-left: 18px;
+    display: inline;
 }
 
 .r {
@@ -101,17 +105,17 @@ label {
     margin-top: 0.5rem;
 }
 
+#summ {
+    font-size: 17px;
+    text-transform: none;
+    font-family: var(--font-family-1);
+}
+
 @media (max-width:50.625rem) {
     .wht {
         flex-direction: column;
         margin-top: 3.125rem;
         text-align: center;
-    }
-    #quan {
-        margin-top: 20px;
-    }
-    #quan label {
-        font-size: 22px;
     }
 
     .r {
@@ -163,4 +167,25 @@ label {
     }
 
 
+}
+
+
+@media (max-width: 31.25rem) {
+    img {
+        margin-left: 0px;
+        width: 60%;
+    }
+}
+
+@media (max-width: 26.25rem) {
+
+    .add-to-cart {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .abcd {
+        margin-top: 15px;
+    }
 }

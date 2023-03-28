@@ -1,0 +1,16 @@
+<article class="cart-item">
+    <div class="cart-item-info">
+        <div class="img-div">
+            <img src="<%= item.product.imageUrl %>" alt="<%= item.product.title %> " id="oil-img">
+        </div>
+        <div>
+            <h3>
+                <%= item.product.title %>
+            </h3>
+            <p>PKR<span class="cart-item-price">
+                    <%= item.totalPrice %>
+                </span> <span class="cart-product-price">(PKR<%= item.product.price %>)</span></p>
+        </div>
+    </div>
+
+</article>

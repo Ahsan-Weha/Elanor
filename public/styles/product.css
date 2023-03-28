@@ -4,7 +4,7 @@ img {
 
 .shd {
     box-shadow: 1px 1px 4px rgb(189 189 189 / 40%);
-    width: 23rem;
+
 }
 
 .for-add {
@@ -28,9 +28,15 @@ main p {
     text-align: start;
 }
 
+ul {
+    padding: 0px;
+    margin: 0px;
+}
 
 img {
     width: 100%;
+    max-width: 23rem;
+    min-width: 13rem;
 
 }
 
@@ -112,3 +118,15 @@ label {
     margin-top: 0.5rem;
 }
 
+@media (max-width:28.125rem) {
+    img {
+        width: 15rem;
+    }
+
+    .shd {
+
+        margin-top: 15px;
+    }
+
+
+}
